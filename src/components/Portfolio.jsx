@@ -15,7 +15,7 @@ const Portfolio = () => {
       img: '/images/curelink.png',
       title: 'CureLink',
       desc: 'A full-stack doctor appointment booking application built with React.js, Node.js, Express.js, and MongoDB. Includes patient registration, doctor search, and appointment booking.',
-      link: 'https://cure-link-49xojek8q-tushar-pants-projects.vercel.app/',
+      link: 'https://cure-link-zeta.vercel.app/',
       bgColor: '#ffffff'
     },
     {
