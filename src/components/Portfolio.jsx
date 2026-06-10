@@ -72,12 +72,14 @@ const Portfolio = () => {
           }}
         >
           {projects.map((project, idx) => (
-            <motion.div
+            <motion.a
               key={idx}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={projectVariants}
               whileHover="hover"
               className="portfolio-card"
-              onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
               style={{
                 position: 'relative',
                 borderRadius: '16px',
@@ -86,7 +88,8 @@ const Portfolio = () => {
                 aspectRatio: '16/9',
                 backgroundColor: project.bgColor || 'var(--bg-secondary)',
                 cursor: 'pointer',
-                touchAction: 'manipulation'
+                touchAction: 'manipulation',
+                display: 'block'
               }}
             >
               {/* Background Project Image */}
@@ -134,12 +137,8 @@ const Portfolio = () => {
                 <p style={{ color: '#cbd5e1', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '20px' }}>
                   {project.desc}
                 </p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div
                   className="project-link"
-                  onClick={(e) => e.stopPropagation()}
                   style={{
                     alignSelf: 'flex-start',
                     width: '44px',
@@ -165,9 +164,9 @@ const Portfolio = () => {
                   }}
                 >
                   <ExternalLink size={20} />
-                </a>
+                </div>
               </motion.div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 
