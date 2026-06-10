@@ -5,21 +5,21 @@ import { ExternalLink } from 'lucide-react';
 const Portfolio = () => {
   const projects = [
     {
-      img: '/images/snapcaption.png',
+      img: 'images/snapcaption.png',
       title: 'Snap Caption AI',
       desc: 'An AI-powered image captioning web app built with React, Node.js, Gemini Vision API, and ImageKit cloud storage. Features secure JWT authentication.',
       link: 'https://snapcaption-ai.vercel.app/',
       bgColor: '#0c0d14'
     },
     {
-      img: '/images/curelink.png',
+      img: 'images/curelink.png',
       title: 'CureLink',
       desc: 'A full-stack doctor appointment booking application built with React.js, Node.js, Express.js, and MongoDB. Includes patient registration, doctor search, and appointment booking.',
       link: 'https://cure-link-zeta.vercel.app/',
       bgColor: '#ffffff'
     },
     {
-      img: '/images/quorapost.png',
+      img: 'images/quorapost.png',
       title: 'Quora Post Clone',
       desc: 'A Quora-like community web app built with HTML, CSS, JavaScript, Express.js, EJS, and REST APIs. Implements full CRUD posts and dynamic rendering.',
       link: 'https://quora-post-jvcz.onrender.com/posts',

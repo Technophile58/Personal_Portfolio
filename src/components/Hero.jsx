@@ -100,7 +100,7 @@ const Hero = () => {
               <a href="#contact" className="btn btn-primary">
                 Let's Talk <ArrowRight size={18} />
               </a>
-              <a href="/images/my-cv.pdf" download className="btn btn-secondary">
+              <a href="images/my-cv.pdf" download className="btn btn-secondary">
                 Download Resume <Download size={18} />
               </a>
             </div>
@@ -135,7 +135,7 @@ const Hero = () => {
                 }}
               >
                 <img 
-                  src="/images/developer-avatar.png" 
+                  src="images/developer-avatar.png" 
                   alt="Developer Avatar" 
                   style={{ 
                     width: '100%', 

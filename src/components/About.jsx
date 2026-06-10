@@ -32,7 +32,7 @@ const About = () => {
       <div className="container">
         <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '50px' }}>
           
-          <div className="about-columns" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.5fr)', gap: '60px', alignItems: 'start' }}>
+          <div className="about-columns">
             
             {/* Left Column: Stylized Image Frame */}
             <motion.div 
@@ -57,7 +57,7 @@ const About = () => {
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'rotate(-2deg) scale(1)'}
               >
                 <img 
-                  src="/images/developer-avatar.png" 
+                  src="images/developer-avatar.png" 
                   alt="Developer Avatar" 
                   style={{ width: '100%', borderRadius: '12px', display: 'block', filter: 'grayscale(20%)' }}
                 />

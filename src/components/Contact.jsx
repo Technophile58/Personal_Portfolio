@@ -167,7 +167,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <a href="/images/my-cv.pdf" download className="btn btn-secondary" style={{ alignSelf: 'flex-start', marginTop: '10px' }}>
+            <a href="images/my-cv.pdf" download className="btn btn-secondary" style={{ alignSelf: 'flex-start', marginTop: '10px' }}>
               Download Resume <Download size={18} />
             </a>
           </motion.div>
