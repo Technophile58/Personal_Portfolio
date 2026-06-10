@@ -66,7 +66,20 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu Toggle */}
-        <button onClick={toggleMenu} className="menu-toggle" aria-label="Toggle Menu">
+        <button 
+          onClick={toggleMenu} 
+          className="menu-toggle" 
+          aria-label="Toggle Menu"
+          style={{ 
+            minWidth: '44px', 
+            minHeight: '44px', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            touchAction: 'manipulation',
+            WebkitTapHighlightColor: 'transparent'
+          }}
+        >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -137,7 +150,14 @@ const Navbar = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.08 }}
                   className="mobile-nav-link"
-                  style={{ fontSize: '1.25rem', fontWeight: 600, padding: '5px 0', display: 'block' }}
+                  style={{ 
+                    fontSize: '1.25rem', 
+                    fontWeight: 600, 
+                    padding: '12px 0', 
+                    display: 'block',
+                    touchAction: 'manipulation',
+                    WebkitTapHighlightColor: 'transparent'
+                  }}
                 >
                   {link.name}
                 </motion.a>

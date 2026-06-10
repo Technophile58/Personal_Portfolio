@@ -33,6 +33,7 @@
   font-family: var(--font-family);
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary) var(--bg-primary);
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom Scrollbar */
@@ -66,6 +67,12 @@ a {
   text-decoration: none;
   color: inherit;
   transition: var(--transition-fast);
+  touch-action: manipulation;
+}
+
+button {
+  touch-action: manipulation;
+  cursor: pointer;
 }
 
 button, input, textarea {

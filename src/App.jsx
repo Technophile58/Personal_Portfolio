@@ -29,7 +29,8 @@ function App() {
           height: '4px', 
           background: 'var(--gradient-accent)', 
           transformOrigin: '0%', 
-          zIndex: 2000 
+          zIndex: 2000,
+          pointerEvents: 'none'
         }} 
       />
       <Navbar />
