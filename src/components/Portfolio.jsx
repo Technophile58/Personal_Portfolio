@@ -77,6 +77,7 @@ const Portfolio = () => {
               variants={projectVariants}
               whileHover="hover"
               className="portfolio-card"
+              onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
               style={{
                 position: 'relative',
                 borderRadius: '16px',
@@ -84,7 +85,8 @@ const Portfolio = () => {
                 boxShadow: 'var(--glow-card)',
                 aspectRatio: '16/9',
                 backgroundColor: project.bgColor || 'var(--bg-secondary)',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                touchAction: 'manipulation'
               }}
             >
               {/* Background Project Image */}
@@ -137,6 +139,7 @@ const Portfolio = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-link"
+                  onClick={(e) => e.stopPropagation()}
                   style={{
                     alignSelf: 'flex-start',
                     width: '44px',
