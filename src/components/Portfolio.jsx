@@ -72,101 +72,85 @@ const Portfolio = () => {
           }}
         >
           {projects.map((project, idx) => (
-            <motion.a
+            <motion.div
               key={idx}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
               variants={projectVariants}
-              whileHover="hover"
-              className="portfolio-card"
-              style={{
-                position: 'relative',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                boxShadow: 'var(--glow-card)',
-                aspectRatio: '16/9',
-                backgroundColor: project.bgColor || 'var(--bg-secondary)',
-                cursor: 'pointer',
-                touchAction: 'manipulation',
-                display: 'block'
-              }}
+              className="portfolio-card-wrapper"
+              style={{ display: 'block' }}
             >
-              {/* Background Project Image */}
-              <motion.img
-                src={project.img}
-                alt={project.title}
-                variants={{
-                  hover: { scale: 1.05 }
-                }}
-                transition={{ duration: 0.4 }}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="portfolio-card"
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain',
+                  position: 'relative',
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  boxShadow: 'var(--glow-card)',
+                  aspectRatio: '16/9',
+                  backgroundColor: project.bgColor || 'var(--bg-secondary)',
+                  cursor: 'pointer',
+                  touchAction: 'manipulation',
                   display: 'block'
                 }}
-              />
-
-              {/* Glass Details Hover Overlay */}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 0, y: 20 },
-                  hover: { opacity: 1, y: 0 }
-                }}
-                transition={{ duration: 0.3 }}
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  opacity: 0,
-                  background: 'linear-gradient(to top, rgba(11, 15, 25, 0.98) 20%, rgba(99, 102, 241, 0.75) 100%)',
-                  backdropFilter: 'blur(8px)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-end',
-                  padding: '30px',
-                  color: 'white',
-                  textAlign: 'left'
-                }}
               >
-                <h3 style={{ fontSize: '1.4rem', fontWeight: '700', marginBottom: '8px' }}>{project.title}</h3>
-                <p style={{ color: '#cbd5e1', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '20px' }}>
-                  {project.desc}
-                </p>
-                <div
-                  className="project-link"
+                {/* Background Project Image */}
+                <img
+                  src={project.img}
+                  alt={project.title}
                   style={{
-                    alignSelf: 'flex-start',
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '50%',
-                    background: 'white',
-                    color: 'var(--color-primary)',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    display: 'block'
+                  }}
+                />
+
+                {/* Glass Details Hover Overlay */}
+                <div
+                  className="portfolio-overlay"
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'linear-gradient(to top, rgba(11, 15, 25, 0.98) 20%, rgba(99, 102, 241, 0.75) 100%)',
+                    backdropFilter: 'blur(8px)',
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-                    transition: 'transform 0.2s ease, background-color 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.1)';
-                    e.currentTarget.style.backgroundColor = 'var(--color-primary)';
-                    e.currentTarget.style.color = 'white';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'scale(1)';
-                    e.currentTarget.style.backgroundColor = 'white';
-                    e.currentTarget.style.color = 'var(--color-primary)';
+                    flexDirection: 'column',
+                    justifyContent: 'flex-end',
+                    padding: '30px',
+                    color: 'white',
+                    textAlign: 'left'
                   }}
                 >
-                  <ExternalLink size={20} />
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: '700', marginBottom: '8px' }}>{project.title}</h3>
+                  <p style={{ color: '#cbd5e1', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '20px' }}>
+                    {project.desc}
+                  </p>
+                  <div
+                    className="project-link-btn"
+                    style={{
+                      alignSelf: 'flex-start',
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '50%',
+                      background: 'white',
+                      color: 'var(--color-primary)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                      transition: 'transform 0.2s ease, background-color 0.2s ease'
+                    }}
+                  >
+                    <ExternalLink size={20} />
+                  </div>
                 </div>
-              </motion.div>
-            </motion.a>
+              </a>
+            </motion.div>
           ))}
         </motion.div>
 
