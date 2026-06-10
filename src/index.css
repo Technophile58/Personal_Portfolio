@@ -341,34 +341,54 @@ section {
   }
 }
 
-/* Portfolio Card Hover & Mobile CSS Transition Effects */
-.portfolio-card img {
+/* Portfolio Card Hover & Responsiveness */
+.portfolio-card-container {
+  border: 1px solid var(--border-glass);
+}
+
+.portfolio-card-media img {
   transition: transform 0.4s ease;
 }
 
-.portfolio-card .portfolio-overlay {
+.portfolio-desktop-overlay {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.35s ease, transform 0.35s ease;
   pointer-events: none;
 }
 
-@media (hover: hover) {
-  .portfolio-card:hover img {
+/* Desktop Hover Styles */
+@media (min-width: 1025px) {
+  .portfolio-desktop-overlay {
+    display: flex !important;
+  }
+  
+  .portfolio-card-media:hover img {
     transform: scale(1.05);
   }
 
-  .portfolio-card:hover .portfolio-overlay {
+  .portfolio-card-media:hover .portfolio-desktop-overlay {
     opacity: 1 !important;
     transform: translateY(0) !important;
     pointer-events: auto;
   }
-}
-
-/* Hide overlay on mobile/tablet devices to guarantee standard link clicks work instantly */
-@media (max-width: 1024px) {
-  .portfolio-card .portfolio-overlay {
+  
+  .portfolio-mobile-details {
     display: none !important;
   }
 }
+
+/* Mobile responsive layout */
+@media (max-width: 1024px) {
+  .portfolio-desktop-overlay {
+    display: none !important;
+  }
+  
+  .portfolio-mobile-details {
+    display: flex !important;
+    background: var(--bg-glass);
+    border-top: 1px solid var(--border-glass);
+  }
+}
+
 
