@@ -346,25 +346,29 @@ section {
   transition: transform 0.4s ease;
 }
 
-.portfolio-card:hover img {
-  transform: scale(1.05);
-}
-
 .portfolio-card .portfolio-overlay {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
 }
 
-.portfolio-card:hover .portfolio-overlay {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
+@media (hover: hover) {
+  .portfolio-card:hover img {
+    transform: scale(1.05);
+  }
 
-/* For mobile touch screens, we make the overlay show up when tapped, or we can keep it 100% responsive. */
-@media (max-width: 1024px) {
-  .portfolio-card .portfolio-overlay {
-    /* Optional: display text on mobile or let tap trigger navigation instantly */
-    opacity: 0;
+  .portfolio-card:hover .portfolio-overlay {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto;
   }
 }
+
+/* Hide overlay on mobile/tablet devices to guarantee standard link clicks work instantly */
+@media (max-width: 1024px) {
+  .portfolio-card .portfolio-overlay {
+    display: none !important;
+  }
+}
+
